@@ -7,6 +7,11 @@ pipeline {
     agent {
         label 'AGENT-1'
     }
+    parameters {
+        booleanParam(name: 'buildAlamySolrDocker', defaultValue: false, description: 'Do you want to build alamy-solr-docker image?')
+        booleanParam(name: 'buildSolrDockerClassification', defaultValue: false, description: 'Do you want to build solr-docker-classification image?')
+        booleanParam(name: 'buildSolrDockerVisualmatch', defaultValue: false, description: 'Do you want to build solr-docker-visualmatch image?')
+    }
     stages {
         stage('Build') {
             steps {
