@@ -32,7 +32,7 @@ parameters {
         description: 'Select a branch to build'
     )
 
-    activeChoicesParam(
+    activeChoiceParam(
         name: 'ENVIRONMENTS',
         type: 'CHECK_BOX',
         choices: ['dev', 'staging', 'prod'],
