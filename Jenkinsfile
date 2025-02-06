@@ -8,16 +8,16 @@ properties([
             defaultValue: 'master',
             description: 'Select a branch to build'
         ),
-        activeChoice(
-            name: 'ENVIRONMENTS',
-            choiceType: 'CHECKBOX', // Use 'SINGLE_SELECT' for dropdown, 'CHECKBOX' for multi-select
-            description: 'Select environments for deployment',
-            script: [
-                $class: 'org.biouno.unochoice.model.GroovyScript',
-                fallbackScript: 'return ["default"]', // Used if script execution fails
-                script: 'return ["dev", "staging", "prod"]' // Script returning values
-            ]
-        )
+        // activeChoice(
+        //     name: 'ENVIRONMENTS',
+        //     choiceType: 'CHECKBOX', // Use 'SINGLE_SELECT' for dropdown, 'CHECKBOX' for multi-select
+        //     description: 'Select environments for deployment',
+        //     script: [
+        //         $class: 'org.biouno.unochoice.model.GroovyScript',
+        //         fallbackScript: 'return ["default"]', // Used if script execution fails
+        //         script: 'return ["dev", "staging", "prod"]' // Script returning values
+        //     ]
+        // )
     ])
 ])
 
