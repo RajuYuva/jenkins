@@ -24,6 +24,22 @@ parameters {
     run(name: 'UPSTREAM_BUILD', description: 'Select a build from the parent job')
 
     credentials(name: 'GIT_CREDENTIALS', description: 'Select Git credentials')
+    gitParameter(
+        name: 'BRANCH',
+        type: 'PT_BRANCH',
+        branchFilter: 'origin/*',
+        defaultValue: 'master',
+        description: 'Select a branch to build'
+    )
+
+    activeChoicesParam(
+        name: 'ENVIRONMENTS',
+        type: 'CHECK_BOX',
+        choices: ['dev', 'staging', 'prod'],
+        description: 'Select environments for deployment'
+    )
+
+
 }
 
     stages {
