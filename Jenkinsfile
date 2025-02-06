@@ -10,11 +10,12 @@ properties([
         ),
         activeChoice(
             name: 'ENVIRONMENTS',
-            choiceType: 'CHECKBOX', // 'SINGLE_SELECT' for dropdown, 'CHECKBOX' for multi-select
+            choiceType: 'CHECKBOX', // Use 'SINGLE_SELECT' for dropdown, 'CHECKBOX' for multi-select
             description: 'Select environments for deployment',
             script: [
-                fallbackScript: 'return ["default"]',
-                script: 'return ["dev", "staging", "prod"]'
+                $class: 'org.biouno.unochoice.model.GroovyScript',
+                fallbackScript: 'return ["default"]', // Used if script execution fails
+                script: 'return ["dev", "staging", "prod"]' // Script returning values
             ]
         )
     ])
