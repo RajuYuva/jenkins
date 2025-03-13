@@ -46,9 +46,9 @@ Our pipelines define various parameters to control behavior. For example, a bool
 pipeline {
   parameters {
     booleanParam(
-      name: 'buildAlamySolrDocker', 
+      name: 'buildnagaSolrDocker', 
       defaultValue: false, 
-      description: 'Do you want to build alamy-solr-docker image?'
+      description: 'Do you want to build naga-solr-docker image?'
     )
     // Additional parameters...
   }
@@ -102,7 +102,7 @@ stages {
       container('kubectl/kaniko') {
         script {
           def currDir = pwd()
-          if (params.buildAlamySolrDocker) {
+          if (params.buildnagaSolrDocker) {
             buildDockerImage(currDir, env.AWS_REGION, env.AWS_CRD_ID)
           }
         }
